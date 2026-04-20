@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Coolify 배포 테스트</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 400px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        p  { opacity: 0.8; margin-bottom: 25px; }
+        .badge {
+            display: inline-block;
+            background: #00d4ff;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .version {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+        .time {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 배포 성공!</h1>
+        <p>GitHub Push → Coolify 자동 배포</p>
+        <span class="badge">✅ Coolify</span>
+        <span class="badge">🐳 Docker</span>
+        <span class="badge">⚡ GitHub</span>
+        <div class="time" id="time"></div>
+        <div class="version">Version 1.0.0</div>
+    </div>
+    <script>
+        function tick() {
+            document.getElementById('time').textContent =
+                '현재 시각: ' + new Date().toLocaleString('ko-KR');
+        }
+        tick();
+        setInterval(tick, 1000);
+    </script>
+</body>
+</html>
